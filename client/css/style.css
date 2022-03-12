@@ -11,3 +11,10 @@
       font-size: 3.5rem;
     }
   }
+
+  
+  .cover {
+    background-image: url(../assets/1.webp);
+    background-repeat: no-repeat;
+  }
+  
