@@ -3,7 +3,7 @@ var express = require('express')
 var app = express()
 var fs = require('fs')
 
-app.use(express.static('client'))
+// app.use(express.static('client'))
 
 app.get('/gallery', function(req,resp){
     fs.readFile('./index.html',function(err,data){
