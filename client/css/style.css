@@ -15,6 +15,9 @@
   
   .cover {
     background-image: url(../assets/1.webp);
-    background-repeat: no-repeat;
+  }
+
+  .mainbody{
+    background-image: url(../assets/1.webp);
   }
   
