@@ -1,12 +1,10 @@
 // const { get } = require("express/lib/response");
 
 // document.addEventListener("DOMContentLoaded",() => {
-//     alert("Hi")
 //     fetch('http://127.0.0.1:3000/gallery')
 //     .then(response => console.log(response.text()))
 //     // response.ok
 //     .then(body => {
-//         alert("Hi");
 //         document.getElementById('content').innerHTML=body;
 //         render_post();
 //     })
@@ -15,6 +13,8 @@
 //  })
 
 // alert('Hi');
+
+document.addEventListener("DOMContentLoaded",() => {render_post();})
 
 async function get_post(){
     // alert('Hi')
@@ -56,4 +56,4 @@ async function render_post(){
     }
 }
 
-render_post()
+// render_post()
