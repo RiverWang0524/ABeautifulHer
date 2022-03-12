@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Checkout example · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<!-- local -->
+
+<link rel="stylesheet" href="../css/form.css">
+
+<!-- new -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<!-- Bootstrap core CSS -->
+<link type="text/css" href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- Include jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<!-- new -->
+<script>
+  $(document).ready(function(){
+    var date_input=$('input[name="date"]'); //our date input has the name "date"
+    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    var options={
+      format: 'mm/dd/yyyy',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,
+    };
+    date_input.datepicker(options);
+  })
+</script>
+
+
+  </head>
+  <body class="bg-light">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="../assets/logo.jpg" alt="" width="72" height="57">
+      <h2>Submit</h2>
+      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+
+    
+      <div class="col-md-7 col-lg-8">
+        
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Image</label>
+              <span class="asteriskField">
+                *
+               </span>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid image is required.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Her name<span class="text-muted">(alias allowed)</span></label>
+              <span class="asteriskField">
+                *
+               </span>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid name is required.
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Country</label>
+              <span class="asteriskField">
+                *
+               </span>
+              <select class="form-select" id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+               <div class="col-md-6 col-sm-6 col-xs-12">
+                <form class="form-horizontal" method="post">
+                 <div class="form-group ">
+                  <label class="control-label col-sm-2 requiredField" for="date">
+                   Date of Birth
+                   <span class="asteriskField">
+                    *
+                   </span>
+                  </label>
+                  <div class="col-sm-10">
+                   <div class="input-group">
+                    <div class="input-group-addon">
+                     <i class="fa fa-calendar">
+                     </i>
+                    </div>
+                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="form-group">
+                  <div class="col-sm-10 col-sm-offset-2">
+                  </div>
+                 </div>
+                </form>
+               </div>
+              </div>
+             </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">About/Description</label>
+              <span class="asteriskField">
+                *
+               </span>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                Description required.
+              </div>
+            </div>
+          
+
+
+          <div class="col-12">
+            <label for="email" class="form-label">Skill <span class="text-muted">(Optional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="Programming">
+            <div class="invalid-feedback">
+              Please enter valid skills for shipping updates.
+            </div>
+          </div>
+
+
+          <div class="col-12">
+            <label for="email" class="form-label">Legacy <span class="text-muted">(Optional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="First Female Computer Scientist">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+
+            
+           
+          
+
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+   
+  </footer>
+</div>
+
+
+<script src="/ABeautifulHer/Gallery/assets/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+      <script src="/client/js/form-validation.js"></script>
+  </body>
+</html>
