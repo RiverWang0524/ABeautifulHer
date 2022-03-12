@@ -18,4 +18,4 @@ app.get('/gallery', function(req,resp){
     })
 })
 
-app.listen(3000)
+app.listen(8000)
