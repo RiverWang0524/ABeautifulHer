@@ -4,7 +4,7 @@
       "Name": "Ada Lovelace",
       "Birthday": "December 10, 1815",
       "Country": "England",
-      "Image URL": "https://eleanorglanvillecentre.lincoln.ac.uk/assets/images/content/_large/adalovelacehero.jpg",
+      "ImageURL": "https://eleanorglanvillecentre.lincoln.ac.uk/assets/images/content/_large/adalovelacehero.jpg",
       "About": "Ada Lovelace was an English mathematician and is considered the first computer programmer. Even though she wrote about a computer, the Analytical Engine, that was never built, she realized that the computer could follow a series of simple instructions, a program, to perform a complex calculation.",
       "Skills": ["Maths", "French", "Music"],
       "Legacy": "First computer programmer"

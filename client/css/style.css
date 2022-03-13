@@ -11,28 +11,8 @@
     font-size: 3.5rem;
   }
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
-:root {
-  --primary-color: #A82C48;
-  --secondry-color: #43121d;
-  --third-color: #f98169;
-  --white-color: #fff;
-  --text-color: #555;
-  --text-gray: #999;
-  --black-color: #000;
-  --primary-font: 'Quicksand', sans-serif;
-}
-
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--primary-font);
-  font-size: 100%;
-  font-weight: 400;
 }
 
 .thumbnail {
@@ -44,3 +24,27 @@ body {
     background: no-repeat 50%;
     object-fit: cover;
 }
+
+.cover {
+  overflow: hidden;
+  width: 225px;
+  height: 325px;
+  object-fit: cover;
+}
+
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  
+  .cover {
+    background-image: url(../assets/1.webp);
+  }
+
+  .mainbody{
+    background-image: url(../assets/1.webp);
+  }
+  

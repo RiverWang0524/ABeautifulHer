@@ -18,7 +18,7 @@ function loadPeople (mediumID, json) {
         const name = json[i]['Name'];
         const bday = json[i]['Birthday'];
         const country = json[i]['Country'];
-        const dp = json[i]['Image URL'];
+        const dp = json[i]['ImageURL'];
         const about = json[i]['About'];
         const skills = json[i]['Skills'];
         const legacy = json[i]['Legacy'];
@@ -44,4 +44,42 @@ function loadPeople (mediumID, json) {
     };
     const medium = document.getElementById(mediumID);
     medium.innerHTML = html;
+    configReadMoreBtns()
+};
+
+// make sure details are loaded when button is pressed
+function configReadMoreBtns () {
+    const btns = document.getElementsByClassName('viewperson');
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', async function (event) {
+            event.preventDefault();
+            const id = this.id;
+            const fetchurl = 'http://127.0.0.1:8090/people/' + id;
+            try {
+                const response = await fetch(fetchurl);
+                const details = await response.json();
+                loadDetails(details);
+            } catch (error) {
+                alert('Error: Unable to fetch details, please try again later');
+            }
+        });
+    };
+};
+
+// load details of individual manhwa
+function loadDetails (details) {
+    document.getElementById('detailspane').hidden = false;
+    document.getElementById('staticImage').src = details['ImageURL'];
+    document.getElementById('staticName').innerHTML = details['Name'];
+    document.getElementById('staticBirthday').innerHTML = details['Birthday'];
+    document.getElementById('staticCountry').innerHTML = details['Country'];
+    html = '';
+    for (let x of details['Skills']) {
+        html += '<li class="list-group-item">';
+        html += x;
+        html += '</li>';
+    };
+    document.getElementById('staticSkills').innerHTML = html;
+    document.getElementById('staticLegacy').innerHTML = details['Legacy'];
+    document.getElementById('staticAbout').innerHTML = details['About'];
 };
