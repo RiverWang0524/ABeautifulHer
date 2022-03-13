@@ -64,13 +64,36 @@ app.get('/people/:id', function (req, resp) {
         const all = JSON.parse(data);
         for (const individual of all) {
             if (individual['ID'] === id) {
-                resp.status(200).json(individual);
+                resp.writeHead(200,{'Content-Type':'application/json', 'Access-Control-Allow-Origin': 'http://localhost:3000'});
+                resp.write(individual.toString());
+                resp.end()
                 return;
             }
         }
         resp.status(404).send('Person with ID not found');
     });
 });
+
+app.get('/people/:id', function (req, resp) {
+    const id = req.params.id;
+    console.log(id);
+    fs.readFile('data/people.json', (err, data) => {
+        if (err) {
+            throw err;
+        }
+        const all = JSON.parse(data);
+        for (const individual of all) {
+            if (individual['ID'] === id) {
+                resp.writeHead(200,{'Content-Type':'application/json', 'Access-Control-Allow-Origin': 'http://localhost:3000'});
+                resp.write(individual.toString());
+                resp.end()
+                return;
+            }
+        }
+        resp.status(404).send('Person with ID not found');
+    });
+});
+
 
 app.listen(3000)
 
