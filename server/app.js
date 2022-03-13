@@ -26,9 +26,6 @@ app.get('/gallery', function(req,resp){
 })
 
 app.get('/gallery/get_post', function(req,resp){
-    // resp.writeHead(200,{'Content-Type':'application/json'});
-    // resp.write(people_data);
-    // resp.end();
     fs.readFile('data/people.json',function(err,data){
         if (err){
             resp.writeHead(404,{'Content-Type':'text/html'});
@@ -57,25 +54,6 @@ app.get('/form', function(req,resp){
 // read individual details
 app.get('/people/:id', function (req, resp) {
     const id = req.params.id;
-    fs.readFile('data/people.json', (err, data) => {
-        if (err) {
-            throw err;
-        }
-        const all = JSON.parse(data);
-        for (const individual of all) {
-            if (individual['ID'] === id) {
-                resp.writeHead(200,{'Content-Type':'application/json', 'Access-Control-Allow-Origin': 'http://localhost:3000'});
-                resp.write(individual.toString());
-                resp.end()
-                return;
-            }
-        }
-        resp.status(404).send('Person with ID not found');
-    });
-});
-
-app.get('/people/:id', function (req, resp) {
-    const id = req.params.id;
     console.log(id);
     fs.readFile('data/people.json', (err, data) => {
         if (err) {
@@ -93,6 +71,26 @@ app.get('/people/:id', function (req, resp) {
         resp.status(404).send('Person with ID not found');
     });
 });
+
+// app.get('/people/:id', function (req, resp) {
+//     const id = req.params.id;
+//     console.log(id);
+//     fs.readFile('data/people.json', (err, data) => {
+//         if (err) {
+//             throw err;
+//         }
+//         const all = JSON.parse(data);
+//         for (const individual of all) {
+//             if (individual['ID'] === id) {
+//                 resp.writeHead(200,{'Content-Type':'application/json', 'Access-Control-Allow-Origin': 'http://localhost:3000'});
+//                 resp.write(individual.toString());
+//                 resp.end()
+//                 return;
+//             }
+//         }
+//         resp.status(404).send('Person with ID not found');
+//     });
+// });
 
 
 app.listen(3000)
